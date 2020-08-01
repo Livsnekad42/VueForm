@@ -37,8 +37,8 @@
             <label id="birthdate-label" for="birthdate">Дата рождения: </label>
           </div>
           <div class="rightTab">
-            <input type="text" name="birthdate" id="birthdate" class="input-field" placeholder="Дата рождения" v-model.trim="$v.birthdate.$model">
-            <span v-if="!$v.birthdate.required && $v.birthdate.$dirty">Введите дату в формате DD-MM-YYYY</span>
+            <input type="text" name="birthdate" id="birthdate" class="input-field" placeholder="Введите дату в формате DD-MM-YYYY" v-model.trim="$v.birthdate.$model">
+            <span v-if="!$v.birthdate.required && $v.birthdate.$dirty">Введите дату рождения</span>
           </div>
         </div>
         <div class="rowTab">
@@ -292,10 +292,16 @@
 
   span
     position: absolute
-    top: 30px
+    top: 45px
     left: 15px
     font-size: 12px
     color: red
+
+  select ~ span
+    top: 55px
+
+  .multiselect ~ span
+    top: 80px
 
   .userRatings,
   input[type="checkbox"]
